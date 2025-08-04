@@ -1,0 +1,19 @@
+body.bg {
+  background: linear-gradient(to bottom right, #cbd5e1, #e0f2fe);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
