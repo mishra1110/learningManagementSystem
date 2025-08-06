@@ -3,9 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lecturo LMS - Home</title>
+    <style>
+        /* Reset & Font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Body */
+        body {
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+        .hero a {
+            background: #007bff;
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero a:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 25px;
+            padding: 60px 40px;
+            flex-wrap: wrap;
+        }
+        .feature-box {
+            flex: 1 1 280px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .feature-box h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .feature-box p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    hello
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('index') }}">Lecturo LMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Lecturo LMS</h1>
+        <p>Empowering learners and instructors with an easy-to-use Learning Management System. Manage courses, track progress, and achieve your goals efficiently—all in one place.</p>
+        <a href="{{ url_for('register') }}">🚀 Get Started</a>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>📚 Interactive Courses</h3>
+            <p>Access high-quality courses with videos, quizzes, and study material to enhance your learning experience.</p>
+        </div>
+        <div class="feature-box">
+            <h3>📊 Track Progress</h3>
+            <p>Monitor your academic performance and attendance with real-time progress reports and insights.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🎓 Certificates</h3>
+            <p>Earn recognized certifications upon completing courses to showcase your achievements.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Lecturo LMS | Designed for smarter learning
+    </footer>
+
 </body>
 </html>
